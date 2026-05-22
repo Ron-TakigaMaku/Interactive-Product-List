@@ -11,3 +11,90 @@ body {
 	font-family: 'Inter', sans-serif;
 	background-color: $bg;
 }
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+ul {
+	list-style: none;
+}
+.container {
+	max-width: 1152px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+.header {
+	&__container {
+		align-items: center;
+		display: flex;
+		padding: 20px 0;
+	}
+	&__nav {
+		align-items: center;
+		display: flex;
+		margin-left: auto;
+		padding: 20px 0;
+	}
+	&__list {
+		display: flex;
+		gap: 40px;
+	}
+}
+.header_item a {
+	color: var(--dark);
+	font-size: 16px;
+	font-weight: 500;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: color 0.3s ease;
+	&:hover {
+		color: var(--primary-color);
+	}
+	&.active {
+		color: var(--primary-color);
+		font-weight: 700;
+	}
+}
+.card {
+	padding: 20px;
+	background-color: $card;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: transform 0.2s ease-in-out;
+	&:hover {
+		transform: translateY(-5px);
+	}
+}
+.button {
+	padding: 10px 20px;
+	color: $text;
+	background-color: $primary;
+	border: none;
+	border-radius: 4px;
+	transition: background-color 0.2s ease-in-out;
+	cursor: pointer;
+	&:hover {
+		background-color: $hover;
+	}
+}
+.text-muted {
+	color: $muted;
+}
+.alert {
+	margin-bottom: 20px;
+	padding: 15px;
+	color: $text;
+	background-color: $danger;
+	border-radius: 4px;
+}
+.delete-btn {
+	color: $danger;
+	background-color: transparent;
+	border: none;
+	transition: color 0.2s ease-in-out;
+	cursor: pointer;
+	&:hover {
+		color: darken($danger, 10%);
+	}
+}
