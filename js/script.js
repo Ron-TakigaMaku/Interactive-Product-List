@@ -1,4 +1,6 @@
-const products = [
+const input = document.querySelector('.input')
+const addBtn = document.querySelector('.add-btn')
+let products = [
 	{
 		id: 1,
 		title: 'iPhone 15 Pro',
@@ -24,3 +26,4 @@ function renderProducts() {
 	container.innerHTML = products.map(product => ProductCard(product)).join('')
 }
 renderProducts()
+counter.textContent = `Products: ${products.length}`
