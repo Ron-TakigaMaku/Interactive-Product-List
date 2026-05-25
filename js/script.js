@@ -1,5 +1,8 @@
 const input = document.querySelector('.input')
 const addBtn = document.querySelector('.add-btn')
+const container = document.querySelector('.products')
+const counter = document.querySelector('.counter')
+
 let products = [
 	{
 		id: 1,
@@ -9,17 +12,25 @@ let products = [
 		image: 'https://via.placeholder.com/300',
 	},
 ]
+
+// ====== CARD TEMPLATE ======
 function ProductCard(product) {
 	return `
-	<div class="card">
-		<h2 class="card__title">${product.title}</h2>
-		<p class="card__desc">${product.description}</p>
-		<div class="card__price">${product.price}$</div>
-		<button class="card__btn" data-id="${product.id}">
-			Delete
-		</button>
-	</div>
-	`
+    <div class="card">
+      <img class="card__img" src="${product.image}" alt="${product.title}" />
+
+      <h2 class="card__title">${product.title}</h2>
+      <p class="card__desc">${product.description || ''}</p>
+
+      <div class="card__bottom">
+        <span class="card__price">${product.price}$</span>
+
+        <button class="card__btn" data-id="${product.id}">
+          Delete
+        </button>
+      </div>
+    </div>
+  `
 }
 const container = document.querySelector('.products')
 function renderProducts() {
