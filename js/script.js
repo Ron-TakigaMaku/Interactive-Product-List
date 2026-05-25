@@ -32,9 +32,24 @@ function ProductCard(product) {
     </div>
   `
 }
-const container = document.querySelector('.products')
+
+// ====== RENDER ======
 function renderProducts() {
 	container.innerHTML = products.map(product => ProductCard(product)).join('')
+
+	counter.textContent = `Products: ${products.length}`
 }
+
+// ====== INITIAL RENDER ======
 renderProducts()
-counter.textContent = `Products: ${products.length}`
+
+// ====== DELETE (event delegation) ======
+container.addEventListener('click', event => {
+	if (!event.target.classList.contains('card__btn')) return
+
+	const id = Number(event.target.dataset.id)
+
+	products = products.filter(product => product.id !== id)
+
+	renderProducts()
+})
