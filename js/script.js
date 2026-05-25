@@ -53,3 +53,21 @@ container.addEventListener('click', event => {
 
 	renderProducts()
 })
+
+// ====== ADD PRODUCT ======
+addBtn.addEventListener('click', () => {
+	const title = input.value.trim()
+	if (!title) return
+
+	products.push({
+		id: Date.now(),
+		title,
+		price: 0,
+		description: '',
+		image: 'https://via.placeholder.com/300',
+	})
+
+	input.value = ''
+
+	renderProducts()
+})
