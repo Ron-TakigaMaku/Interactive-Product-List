@@ -11,6 +11,24 @@ let products = [
 		description: 'Powerful Apple smartphone with A17 Pro chip.',
 		image: 'https://via.placeholder.com/300',
 	},
+	{
+		id: 2,
+		title: 'MacBook Air M3',
+		price: 1499,
+		description: 'Lightweight laptop for developers and creators.',
+	},
+	{
+		id: 3,
+		title: 'Sony WH-1000XM5',
+		price: 399,
+		description: 'Premium noise-cancelling headphones.',
+	},
+	{
+		id: 4,
+		title: 'iPad Pro',
+		price: 999,
+		description: 'Professional tablet with Apple Pencil support.',
+	},
 ]
 
 // ====== CARD TEMPLATE ======
